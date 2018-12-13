@@ -1,7 +1,7 @@
 # Titanic_case_study
 Analysis of titanic data set and my predictions 
 
-# I have used algorithms which I am familiar of in this analysis in R code and later tried my exploratory analysis and logistic regression in Python and checked its perfomance by submitting in kaggle and gave the best as my final submission
+#I have used algorithms which I am familiar of in this analysis in R code and later tried my exploratory analysis and logistic regression in Python and checked its perfomance by submitting in kaggle and gave the best as my final submission
 
 # Problem statement
 
