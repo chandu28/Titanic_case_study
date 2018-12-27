@@ -131,5 +131,46 @@ print(accuracy_matrix_x_train)
 from sklearn.metrics import classification_report
 print(classification_report(y_train,predicted_lm_train))
 
+#--------------------------KNN--------------------------
+from sklearn.neighbors import KNeighborsClassifier
+kn= KNeighborsClassifier(n_neighbors=33)
+model_knn= kn.fit(x_train,y_train)
+predicted_knn= model_knn.predict(x_train)
+predicted_knn
+
+confusion_matrix_train= confusion_matrix(y_train,predicted_knn)
+acurcy_train= accuracy_score(y_train,predicted_knn)
+print(acurcy_train)
+print(classification_report(y_train,predicted_knn))
+
+
+predicted_knn_test= model_knn.predict(x_test)
+predicted_knn_test
+
+confusion_matrix_test= confusion_matrix(y_test,predicted_knn_test)
+acurcy_train_test= accuracy_score(y_test,predicted_knn_test)
+print(acurcy_train_test)
+print(classification_report(y_test,predicted_knn_test))
+print(classification_report)
+
+y_array= np.array(y_train)
+
+#----------------------------finding Best k value----
+error_rate=[]
+for i in range(1,40):
+    
+    kn= KNeighborsClassifier(n_neighbors=i)
+    kn.fit(x_train,y_train)
+    predict_i= kn.predict(x_train)
+    error_rate.append(np.mean(predict_i!= y_array))
+    
+#------------------on plotting graphs best k value is choosen  
+plt.figure(figsize=(10,6))
+plt.plot(range(1,40),error_rate,color='blue',
+         linestyle='dashed',marker='o',markerfacecolor='red',markersize=10)
+plt.title('error_rate_vs_k_value')
+plt.xlabel('k')
+plt.ylabel('error_rate')
+
 
 
